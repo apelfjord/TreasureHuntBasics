@@ -1,0 +1,19 @@
+{
+  "name": "salt-winter19-hackdayw09",
+  "version": "1.0.0",
+  "description": "## Individual hack day!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saltsthlm/salt-winter19-hackdayW09.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saltsthlm/salt-winter19-hackdayW09/issues"
+  },
+  "homepage": "https://github.com/saltsthlm/salt-winter19-hackdayW09#readme"
+}

@@ -1,0 +1,113 @@
+{
+  "tasks": [
+    {
+      "id": 8943,
+      "parentId": 5538,
+      "task": {
+        "title": "What of the following is NOT a programming language?",
+        "pic": false,
+        "pic_src": null,
+        "answers": {
+          "clickableList": [
+            "C#",
+            "Ruby",
+            "FrameWork",
+            "Python"
+          ],
+          "correctAnswer": "FrameWork"
+        },
+        "correct": false
+      }
+    },
+    {
+      "id": 7926,
+      "parentId": 5538,
+      "task": {
+        "title": "Is Java and JavaScript basically the same thing?",
+        "pic": false,
+        "pic_src": null,
+        "answers": {
+          "clickableList": [
+            "Yes",
+            "No"
+          ],
+          "correctAnswer": "No"
+        },
+        "correct": false
+      }
+    },
+    {
+      "id": 7831,
+      "parentId": 5538,
+      "task": {
+        "title": "What does do following code snippet do?",
+        "pic": true,
+        "pic_src": "./pic/pic1.png",
+        "answers": {
+          "clickableList": [
+            "Logs 0, 1 and 2 to the console",
+            "Nothing",
+            "Starts an infinite loop",
+            "Logs 1, 2 and 3 to the console"
+          ],
+          "correctAnswer": "Nothing"
+        },
+        "correct": false
+      }
+    },
+    {
+      "id": 2540,
+      "parentId": 5538,
+      "task": {
+        "title": "Which of the following is a syntax error?",
+        "pic": false,
+        "pic_src": null,
+        "answers": {
+          "clickableList": [
+            "let error = true;",
+            "console.error( 'Something went wrong' );",
+            "const error = ''",
+            "var error = {error: true}:"
+          ],
+          "correctAnswer": "var error = {error: true}:"
+        },
+        "correct": false
+      }
+    },
+    {
+      "id": 2974,
+      "parentId": 5538,
+      "task": {
+        "title": "Is this a question?",
+        "pic": false,
+        "pic_src": null,
+        "answers": {
+          "clickableList": [
+            "No",
+            "Yes, if this is an answer"
+          ],
+          "correctAnswer": "Yes, if this is an answer"
+        },
+        "correct": false
+      }
+    }
+  ],
+  "hunt": [
+      {
+        "id": 5538,
+        "name": "Click the right answers",
+        "description": "Test your knowledge",
+        "dateAdded": "20190314",
+        "open": true,
+        "tasks": [
+          8943,
+          7926,
+          7831,
+          2540,
+          2974
+        ],
+        "huntCompleted": false,
+        "actualTask": 1
+      }
+  ]
+}
