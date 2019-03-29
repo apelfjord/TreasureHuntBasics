@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import {GetTaskData, InsertID} from './taskHandler';
+import {GetTaskData, addQuestion} from './taskHandler';
 
 class TaskMaker extends Component {
   render() {
+    
+    
     const Write = () => {
-      console.log(InsertID(5538));
+        addQuestion();
     }  
     const Read = () => {
-      console.log(GetTaskData('8663'));
+        GetTaskData('8663');
     }  
     return (
         <div className="TaskMaker">
         <button onClick={Read}>Fetch data to log</button>
-        <button onClick={Write}>Post new Data</button>
+        <button type="button" id="fetch" onClick={Write}>Add new question</button>
         </div>
       )
     }
   }
-
-
-export default TaskMaker;
+  
+  export default TaskMaker;

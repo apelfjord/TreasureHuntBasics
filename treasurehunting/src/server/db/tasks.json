@@ -93,21 +93,21 @@
     }
   ],
   "hunt": [
-      {
-        "id": 5538,
-        "name": "Click the right answers",
-        "description": "Test your knowledge",
-        "dateAdded": "20190314",
-        "open": true,
-        "tasks": [
-          8943,
-          7926,
-          7831,
-          2540,
-          2974
-        ],
-        "huntCompleted": false,
-        "actualTask": 1
-      }
+    {
+      "id": 5538,
+      "name": "Click the right answers",
+      "description": "Test your knowledge",
+      "dateAdded": "20190314",
+      "open": true,
+      "tasks": [
+        8943,
+        7926,
+        7831,
+        2540,
+        2974
+      ],
+      "huntCompleted": false,
+      "actualTask": 1
+    }
   ]
 }

@@ -50,7 +50,9 @@ class Task extends Component {
 
             return(
                 <div className = "Task" >
+                <header className="infobar">
             <p><b>{this.state.task.title}</b></p>
+                </header>
                 {picPath}
             <ul>
                 {answers}

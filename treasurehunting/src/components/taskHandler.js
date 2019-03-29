@@ -1,8 +1,7 @@
 import dataBase from '../server/db/tasks.json';
 
 const provisionalRoute = 'http://localhost:8080';
-
-const randomId = Math.floor(Math.random() * (9999 - 1000)) + 1000;
+const newId = Math.floor(Math.random() * (9999 - 1000)) + 1000;
 
 export function FetchTaskData(id) {
     const fetchById = dataBase.tasks.filter((e) => e.id === id);
@@ -24,13 +23,44 @@ export function GetTaskData() {
     })
 }
 
+export function addQuestion(parentId = 5538) {
+    InsertID(parentId);
+    fetch(provisionalRoute + '/hunt/' + parentId).then((response) => {
+        return response.json();
+    }).then((jsonData) => {
+        jsonData.tasks.push(newId);
+        // BACKUP //
+        deleteOldData(parentId);
+        updateTable(jsonData);
+    }).catch((err) => {
+        console.log(err);
+    })
+
+    function deleteOldData(id) {
+        fetch(provisionalRoute + '/hunt/' + id, {
+            method: 'DELETE',
+            })
+    }
+
+    function updateTable(data) {
+        console.log(data);
+        fetch(provisionalRoute + '/hunt', {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(response => console.log('New data added to database: ' + response));
+    }
+}
+
 export function InsertID(parentId) {
-    const id = randomId;
+    const id = newId;
     const dataObject = {
         "id": id,
         "parentId": parentId,
         "task": {
-            "title": "Example question x",
+            "title": "UNTITLED QUESTION",
             "answers": {
                 "clickableList": [
                     "Right answer",
@@ -41,8 +71,10 @@ export function InsertID(parentId) {
                 "correctAnswer": "Right answer"
             },
             "correct": false
+        }
+
     }
-    }
+    
     fetch(provisionalRoute + '/tasks', {
         method: 'POST', 
         headers: {
@@ -50,26 +82,4 @@ export function InsertID(parentId) {
         },
         body: JSON.stringify(dataObject)
     }).then(response => console.log('New data added to database: ' + response));
-
-
-        fetch(provisionalRoute + '/hunt').then((response) => {
-            return response.json();
-        }).then((jsonData) => {
-            storeParentData(jsonData);
-        }).catch((err) => {
-            console.log(err);
-        })
-
-    function storeParentData(jsonObject) {
-        fetch(provisionalRoute + '/hunt', {
-            method: 'POST', 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(jsonObject)
-        }).then(response => console.log('New data added to database: ' + response));
-
-    }
-
-
 }
