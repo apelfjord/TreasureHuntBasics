@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
-import {FetchTaskData} from './taskHandler';
-// import {PrintScore} from './fullHunt';
-import ExampleImage from '../server/db/pic/pic1.png';
+import {FetchTaskData} from '../taskHandler';
+import ExampleImage from '../assets/images/pic1.png';
 
+const initialState =  {
+    "id": '',
+    "parentId": '',
+    "task": {
+        "title": 'Loading question ...',
+        "pic": false,
+        "pic_src": null,
+        "answers": {
+            "clickableList": [],
+            "correctAnswer": ''
+    },
+    "correct": ''
+    }
+}
 
 class Task extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            task: FetchTaskData(this.props.id)
-        }
+        this.state = initialState;
     }
     
     submit(answer) {
@@ -24,8 +35,17 @@ class Task extends Component {
             task: dummyTask
         });
     }
+
+    updateState = async () => {
+        if (!this.state.id) {
+            await FetchTaskData(this.props.id)
+                .then((taskObj) => this.setState(taskObj))
+        }
+    }
     
     render() {
+        this.updateState();
+        console.log(this.state)
         const statePath = this.state.task;
         let answers = []
         let correct = ''

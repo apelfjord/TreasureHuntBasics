@@ -1,23 +1,35 @@
-import dataBase from '../server/db/tasks.json';
-
-const provisionalRoute = 'http://localhost:8080';
+import config from './config.js';
+const path = config.backendUrl;
 const newId = Math.floor(Math.random() * (9999 - 1000)) + 1000;
 
-export function FetchTaskData(id) {
-    const fetchById = dataBase.tasks.filter((e) => e.id === id);
-    return fetchById[0].task;
-}
-
-export function FetchHuntData(id) {
-    const fetchById = dataBase.hunt.filter((e) => e.id === id);
+export async function FetchTaskData(id) {
+    const db = await fetch(path + '/tasks')
+        .then((response) => {
+        return response.json();
+    });
+    const fetchById = db.filter((e) => e.id === id);
     return fetchById[0];
 }
 
-export function GetTaskData() {
-    fetch(provisionalRoute + '/tasks').then((response) => {
+export async function FetchHuntData(id) {
+    const db = await fetch(path + '/hunt').then((response) => {
         return response.json();
-    }).then((jsonData) => {
-        console.log(jsonData);
+    });
+    const fetchById = db.filter((e) => e.id === id);
+    return fetchById;
+}
+
+export function GetTaskData() {
+    fetch(path + '/tasks').then((response) => {
+        return response.json();
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
+export async function GetHuntData() {
+    fetch(path + '/hunt').then((response) => {
+        return response.json();
     }).catch((err) => {
         console.log(err);
     })
@@ -25,7 +37,7 @@ export function GetTaskData() {
 
 export function addQuestion(parentId = 5538) {
     InsertID(parentId);
-    fetch(provisionalRoute + '/hunt/' + parentId).then((response) => {
+    fetch(path + '/hunt/' + parentId).then((response) => {
         return response.json();
     }).then((jsonData) => {
         jsonData.tasks.push(newId);
@@ -37,14 +49,14 @@ export function addQuestion(parentId = 5538) {
     })
 
     function deleteOldData(id) {
-        fetch(provisionalRoute + '/hunt/' + id, {
+        fetch(path + '/hunt/' + id, {
             method: 'DELETE',
             })
     }
 
     function updateTable(data) {
         console.log(data);
-        fetch(provisionalRoute + '/hunt', {
+        fetch(path + '/hunt', {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
@@ -75,7 +87,7 @@ export function InsertID(parentId) {
 
     }
     
-    fetch(provisionalRoute + '/tasks', {
+    fetch(path + '/tasks', {
         method: 'POST', 
         headers: {
             'Content-Type': 'application/json',

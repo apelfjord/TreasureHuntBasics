@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {WriteHuntData} from './taskHandler';
+// import {WriteHuntData} from './taskHandler';
 import TaskMaker from './taskMaker';
 
 class MakeNewHunt extends Component {
