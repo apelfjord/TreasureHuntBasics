@@ -19,27 +19,26 @@ class FullHunt extends Component {
     this.state = initialState;
   }
 
-  updateState = async () => {
-    console.log('INFINTE LOOP! :D')
-    if (!this.state.hunt.id) {
+  printFromDb = async () => {
       await FetchHuntData(5538) 
         .then((huntObj) => this.setState({hunt: huntObj[0]}))
-    }
   }
-  
+
   render() {
-    this.updateState();
+    if (!this.state.hunt.id) {
+      this.printFromDb();
+    }
     const PrintTasks = () => {
-            const returnArray = [];
+            const taskCard = [];
             for (let i = 0; i < this.state.hunt.tasks.length; i++) {
-                returnArray.push(<Task 
+                taskCard.push(<Task 
                     key={i} 
                     number={i + 1} 
                     id={this.state.hunt.tasks[i]} 
                     actual={this.state.hunt.actualTask}
                   />);
             }
-            return returnArray;
+            return taskCard;
         }
         return (
           <div className="FullHunt">

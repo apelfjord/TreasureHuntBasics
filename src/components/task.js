@@ -36,26 +36,31 @@ class Task extends Component {
         });
     }
 
-    updateState = async () => {
-        if (!this.state.id) {
+    printFromDb = async () => {
             await FetchTaskData(this.props.id)
                 .then((taskObj) => this.setState(taskObj))
-        }
     }
     
     render() {
-        this.updateState();
-        console.log(this.state)
+        if (!this.state.id) {
+            this.printFromDb();
+        }
+
         const statePath = this.state.task;
         let answers = []
         let correct = ''
-        let picPath = ''
+        let visualDisplayer = ''
+
+        if (statePath.pic) {
+            visualDisplayer = <img alt='' src={ExampleImage} width="100%"></img>
+        }
+
         if (this.state.task.answers.clickableList.length === 0) {
             if(this.state.task.correct) {
-                correct = <li><h1><span role="img">👍</span></h1></li>;
+                visualDisplayer = <span role="img" class="emoji" aria-label="jsx-a11y/accessible-emoji">👍</span>;
                 
             } else {
-                correct = <li><h1><span role="img">💩</span></h1></li>;
+                visualDisplayer = <span role="img" class="emoji" aria-label="jsx-a11y/accessible-emoji">💩</span>;
                 }
             }
 
@@ -64,16 +69,13 @@ class Task extends Component {
                 {this.state.task.answers.clickableList[i]}</button></li>);
             }
 
-            if (statePath.pic) {
-                picPath = <img alt='' src={ExampleImage} width="100%"></img>
-            }
 
             return(
                 <div className = "Task" >
                 <header className="infobar">
             <p><b>{this.state.task.title}</b></p>
                 </header>
-                {picPath}
+                {visualDisplayer}
             <ul>
                 {answers}
                 {correct}

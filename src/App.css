@@ -61,6 +61,11 @@ img {
   box-shadow: 3px 3px 5px rgb(33, 33, 33);
 }
 
+.emoji {
+  font-size: 5em;
+  text-shadow: 1px 1px 9px rgb(255, 255, 255);
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
