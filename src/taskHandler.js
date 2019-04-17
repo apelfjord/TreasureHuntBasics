@@ -22,7 +22,9 @@ export async function FetchHuntData(id) {
 export function GetTaskData() {
     fetch(path + '/tasks').then((response) => {
         return response.json();
-    }).catch((err) => {
+    })
+        .then((data) => console.log(data))
+        .catch((err) => {
         console.log(err);
     })
 }

@@ -57,10 +57,10 @@ class Task extends Component {
 
         if (this.state.task.answers.clickableList.length === 0) {
             if(this.state.task.correct) {
-                visualDisplayer = <span role="img" class="emoji" aria-label="jsx-a11y/accessible-emoji">👍</span>;
+                visualDisplayer = <span role="img" className="emoji" aria-label="jsx-a11y/accessible-emoji">👍</span>;
                 
             } else {
-                visualDisplayer = <span role="img" class="emoji" aria-label="jsx-a11y/accessible-emoji">💩</span>;
+                visualDisplayer = <span role="img" className="emoji" aria-label="jsx-a11y/accessible-emoji">💩</span>;
                 }
             }
 

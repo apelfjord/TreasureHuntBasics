@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .infobar {
   background-color: #6a7e5a;
 }
@@ -54,6 +58,25 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.TestFrame {
+  background-color: rgb(32, 39, 27);
+}
+
+.TestFrame p {
+  margin-top: 0px;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+.TestFrame button {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+  margin: 10px;
 }
 
 img {

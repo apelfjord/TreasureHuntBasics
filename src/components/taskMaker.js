@@ -13,8 +13,8 @@ class TaskMaker extends Component {
     }  
     return (
         <div className="TaskMaker">
-        <button onClick={Read}>Fetch data to log</button>
-        <button type="button" id="fetch" onClick={Write}>Add new question</button>
+        <button onClick={Read}>Print task data to log</button>
+        <button type="button" id="fetch" onClick={Write}>Add new mock question <br/>(requires page refresh)</button>
         </div>
       )
     }
