@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FullHunt from './components/fullHunt';
+import ListHunts from './components/listHunts';
 import TestFrame from './components/testFrame';
 import './App.css';
 
@@ -11,7 +12,7 @@ class App extends Component {
       <div className="App">
         <TestFrame />
         <header className="App-header">
-          <FullHunt/>
+          <ListHunts/>
         </header>
       </div>
     );

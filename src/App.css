@@ -43,9 +43,10 @@ body {
   background-color: #ffffff00;
   color: white;
   padding: 15px;
-  width: 120px;
+  width: 150px;
   height: 100%;
   box-shadow: 3px 3px 5px rgb(33, 33, 33);
+  overflow-wrap: break-word;
 }
 
 .App {
@@ -89,6 +90,7 @@ img {
   border: 1px solid white;
   margin-top: 10px;
   width: calc(10px + 72.5vmin);
+  max-width: 370px;
   box-shadow: 3px 3px 5px rgb(33, 33, 33);
 }
 

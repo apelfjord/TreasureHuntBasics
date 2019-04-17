@@ -86,7 +86,7 @@
             "An organized group of anonymous hackers",
             "A group of developers working on one computer"
           ],
-          "correctAnswer": "Yes, if this is an answer"
+          "correctAnswer": "A group of developers working on one computer"
         },
         "correct": false
       }
@@ -95,8 +95,8 @@
   "hunt": [
     {
       "id": 5538,
-      "name": "Mock questions",
-      "description": "Test your knowledge",
+      "name": "Random programming trivia",
+      "description": "Test your knowledge and see if you can get all the answers right",
       "dateAdded": "20190314",
       "open": true,
       "tasks": [
