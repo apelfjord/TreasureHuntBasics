@@ -52,7 +52,7 @@ class Task extends Component {
         let visualDisplayer = ''
 
         if (statePath.pic) {
-            visualDisplayer = <img alt='' src={ExampleImage} width="100%"></img>
+            visualDisplayer = <center><img alt='' src={ExampleImage}/></center>
         }
 
         if (this.state.task.answers.clickableList.length === 0) {

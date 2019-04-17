@@ -23,7 +23,7 @@
       "id": 7926,
       "parentId": 5538,
       "task": {
-        "title": "Is Java and JavaScript basically the same thing?",
+        "title": "Is JavaScript an extension of Java?",
         "pic": false,
         "pic_src": null,
         "answers": {
@@ -59,7 +59,7 @@
       "id": 2540,
       "parentId": 5538,
       "task": {
-        "title": "Which of the following is a syntax error?",
+        "title": "Which of the following examples is a syntax error?",
         "pic": false,
         "pic_src": null,
         "answers": {
@@ -78,13 +78,13 @@
       "id": 2974,
       "parentId": 5538,
       "task": {
-        "title": "Is this a question?",
+        "title": "What is a 'mob' when it comes to programming?",
         "pic": false,
         "pic_src": null,
         "answers": {
           "clickableList": [
-            "No",
-            "Yes, if this is an answer"
+            "An organized group of anonymous hackers",
+            "A group of developers working on one computer"
           ],
           "correctAnswer": "Yes, if this is an answer"
         },
@@ -95,7 +95,7 @@
   "hunt": [
     {
       "id": 5538,
-      "name": "Click the right answers",
+      "name": "Mock questions",
       "description": "Test your knowledge",
       "dateAdded": "20190314",
       "open": true,

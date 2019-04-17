@@ -6,6 +6,10 @@ body {
   background-color: #6a7e5a;
 }
 
+.infobar p {
+  padding: 0px 5px;
+}
+
 .Task {
   border-radius: 5px;
   max-width: 400px;
@@ -22,19 +26,21 @@ body {
   display: flex;
   flex-flow: row wrap;
   width: 92,5%;
+  list-style-position: inside;
+  list-style-type: none;
+  padding: 0;
 }
 
 .Task li {
   min-width:45%;
-  list-style-type: none;
-  text-align: left;
   padding: 7.5px 5px;
 }
 
 .Task button {
-  border-radius: 200px;
+  font-size: 0.75em;
+  border-radius: 5px;
   border: 1px solid white;
-  background-color: transparent;
+  background-color: #ffffff00;
   color: white;
   padding: 15px;
   width: 120px;
@@ -81,12 +87,14 @@ body {
 
 img {
   border: 1px solid white;
+  margin-top: 10px;
+  width: calc(10px + 72.5vmin);
   box-shadow: 3px 3px 5px rgb(33, 33, 33);
 }
 
 .emoji {
   font-size: 5em;
-  text-shadow: 1px 1px 9px rgb(255, 255, 255);
+  text-shadow: 1px 1px 10px rgb(255, 255, 255);
 }
 
 @keyframes App-logo-spin {
