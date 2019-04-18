@@ -23,7 +23,7 @@ class Task extends Component {
         this.state = initialState;
     }
     
-    submit(answer) {
+    Submit(answer) {
         const dummyTask = {...this.state.task};
         if (answer === dummyTask.answers.correctAnswer) {
             dummyTask.correct = true;
@@ -36,7 +36,7 @@ class Task extends Component {
         });
     }
 
-    printFromDb = async () => {
+    PrintFromDb = async () => {
             await FetchTaskData(this.props.id)
                 .then((taskObj) => this.setState(taskObj))
     }
@@ -49,7 +49,7 @@ class Task extends Component {
     
     render() {
         if (!this.state.id) {
-            this.printFromDb();
+            this.PrintFromDb();
         }
 
         const statePath = this.state.task;
@@ -71,7 +71,7 @@ class Task extends Component {
             }
 
             for (let i = 0; i < this.state.task.answers.clickableList.length; i++) {
-                answers.push(<li key={i}><button onClick={() => this.submit(this.state.task.answers.clickableList[i])}>
+                answers.push(<li key={i}><button onClick={() => this.Submit(this.state.task.answers.clickableList[i])}>
                 {this.state.task.answers.clickableList[i]}</button></li>);
             }
 

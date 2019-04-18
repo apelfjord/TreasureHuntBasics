@@ -30,14 +30,14 @@ class Hunt extends Component {
         }
         return (
           <div className="Hunt">
-            <div className="Task">
+            <div className="Hunt_frame">
                 <header className="infobar">
-                <h2>{this.state.name}</h2>
-                <p><i>Added {this.state.dateAdded}</i></p>
-                <p>{this.state.description}</p>
-                <p><b>{this.state.tasks.length}</b> tasks</p>
+                <h2 className="huntHeader">{this.state.name}</h2>
+                <p className="date"><i>Added {this.state.dateAdded}</i></p>
+                <p className="description">{this.state.description}</p>
+                <p className="nmbrTasks"><b>{this.state.tasks.length}</b> tasks</p>
                 </header>
-                <button>Start hunt </button>
+                <button className="startHunt">Start hunt </button>
             </div>
           </div>
         )
