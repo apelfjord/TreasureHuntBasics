@@ -104,7 +104,7 @@ body {
 }
 
 .App-header {
-  background-color:lightcyan;
+  background-color:rgb(241, 236, 231);
   min-height: 100vh;
   display: flex;
   align-items: center;

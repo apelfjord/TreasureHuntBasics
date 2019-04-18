@@ -22,11 +22,10 @@ class Hunt extends Component {
         await FetchHuntData(id)
             .then((data) => this.setState(data[0]));
     }
- 
-
+    
     render() {
         if (!this.state.id) {
-            this.GetOneHunt().then(() => console.log(this.state))
+            this.GetOneHunt()
         }
         return (
           <div className="Hunt">
@@ -37,8 +36,8 @@ class Hunt extends Component {
                 <p className="description">{this.state.description}</p>
                 <p className="nmbrTasks"><b>{this.state.tasks.length}</b> tasks</p>
                 </header>
-                <button className="startHunt">Start hunt </button>
             </div>
+                <button className="startHunt">Start hunt </button>
           </div>
         )
       }

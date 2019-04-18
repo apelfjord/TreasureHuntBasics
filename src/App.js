@@ -12,6 +12,9 @@ class App extends Component {
       <div className="App">
         <TestFrame />
         <header className="App-header">
+          <ListHunts/>
+        </header>
+        <header className="App-header">
           <FullHunt/>
         </header>
       </div>
