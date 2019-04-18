@@ -40,6 +40,12 @@ class Task extends Component {
             await FetchTaskData(this.props.id)
                 .then((taskObj) => this.setState(taskObj))
     }
+
+    RandomizeOrderOf = (array) => {
+        return array.sort(() => {
+            return 0.5 - Math.random()
+        })
+    }
     
     render() {
         if (!this.state.id) {
@@ -69,6 +75,7 @@ class Task extends Component {
                 {this.state.task.answers.clickableList[i]}</button></li>);
             }
 
+            this.RandomizeOrderOf(answers);
 
             return(
                 <div className = "Task" >

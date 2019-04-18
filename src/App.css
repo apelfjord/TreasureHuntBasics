@@ -15,7 +15,7 @@ body {
   max-width: 400px;
   display: flex;
   flex-direction: column;
-  border: 1px solid white;
+  border: 1px solid #566649;
   padding: 15px;
   margin: 20px;
   box-shadow: 3px 3px 5px rgb(33, 33, 33);
@@ -37,15 +37,16 @@ body {
 }
 
 .Task button {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 0.75em;
   border-radius: 5px;
-  border: 1px solid white;
-  background-color: #ffffff00;
-  color: white;
+  border: 3px solid #6a7e5a;
+  background-color: #ffffff0a;
+  color: rgb(249, 255, 245);
   padding: 15px;
   width: 150px;
   height: 100%;
-  box-shadow: 3px 3px 5px rgb(33, 33, 33);
+  box-shadow: 0px 0px 5px #c4da9b;
   overflow-wrap: break-word;
 }
 
@@ -96,7 +97,7 @@ img {
 
 .emoji {
   font-size: 5em;
-  text-shadow: 1px 1px 10px rgb(255, 255, 255);
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
 @keyframes App-logo-spin {
