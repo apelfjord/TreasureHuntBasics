@@ -12,20 +12,20 @@ app.get('/', (req, res, next) => {
     res.send('You are now cursed')
     })
 
-app.get('/tasks', (req, res, next) => {
+app.get('/:pathway', (req, res, next) => {
     const data = fs.readFileSync(dbPath, (err, result) => {
-        console.log(result)
         return result;
     })
-    res.send(data)
-})
-
-app.get('/hunt', (req, res, next) => {
-    const data = fs.readFileSync(dbPath, (err, result) => {
-        console.log(result)
-        return result;
-    })
-    res.send(data)
+    switch(req.params.pathway) {
+        case 'tasks':
+            res.send(data)
+            break;
+        case 'hunt':
+            res.send(data)
+            break;
+        default:
+            return 'Something went wrong';
+    }  
 })
 
 app.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
