@@ -6,15 +6,17 @@ export async function FetchTaskData(id) {
     const db = await fetch(path + '/tasks')
         .then((response) => {
         return response.json();
-    });
+    }).then((data) => data.tasks);
     const fetchById = db.filter((e) => e.id === id);
     return fetchById[0];
 }
 
 export async function FetchHuntData(id) {
-    const db = await fetch(path + '/hunt').then((response) => {
+    const db = await fetch(path + '/hunt')
+        .then((response) => {
         return response.json();
-    });
+        })
+        .then((data) => data.hunt);
     const fetchById = db.filter((e) => e.id === id);
     return fetchById;
 }
